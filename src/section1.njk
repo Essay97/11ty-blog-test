@@ -1,0 +1,18 @@
+---
+title: Section 1
+layout: 'base.njk'
+---
+
+<h1>SECTION 1</h1>
+
+<ul>
+  {% for post in collections.post | reverse %}
+    <li>
+      <article>
+        <img height="200" width="200" src="{{post.data.image}}" alt="thumbnail">
+        <h4>{{ post.data.title }}</h4>
+        <a href="{{ post.url }}">Read this</a>
+      </article>
+    </li>
+  {% endfor %}
+</ul>
