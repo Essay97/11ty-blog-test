@@ -18,7 +18,7 @@ collections:
           widget: "hidden",
           default: ["post", "section1"],
         }
-    - name: "section2"
+  - name: "section2"
     label: "Section 2"
     folder: "src/posts/section-2"
     create: true
