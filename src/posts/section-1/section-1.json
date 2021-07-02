@@ -1,0 +1,4 @@
+{
+  "tags": ["posts", "section1"],
+  "layout": "post.njk"
+}
