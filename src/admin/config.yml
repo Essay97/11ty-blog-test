@@ -4,9 +4,9 @@ backend:
 media_folder: "public/assets/blog"
 public_folder: "/assets/blog"
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/posts"
+  - name: "section1"
+    label: "Section 1"
+    folder: "src/posts/section-1"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -17,4 +17,18 @@ collections:
           name: "tags",
           widget: "hidden",
           default: ["post", "section1"],
+        }
+    - name: "section2"
+    label: "Section 2"
+    folder: "src/posts/section-2"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "Category",
+          name: "tags",
+          widget: "hidden",
+          default: ["post", "section2"],
         }

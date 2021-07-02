@@ -6,7 +6,7 @@ layout: 'base.njk'
 <h1>SECTION 1</h1>
 
 <ul>
-  {% for post in collections.post | reverse %}
+  {% for post in collections.section1 | reverse %}
     <li>
       <article>
         <img height="200" width="200" src="{{post.data.image}}" alt="thumbnail">
