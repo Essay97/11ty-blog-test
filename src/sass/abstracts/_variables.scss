@@ -1,0 +1,33 @@
+// Breakpoints for responsive design
+$breakpoints: (
+  "small": 40em,
+  "medium": 65em,
+);
+
+// Color definitions
+$colors: (
+  "blackish": hsl(40, 2%, 12%),
+  "whiteish": hsl(240, 20%, 95%),
+);
+
+// Theme definition
+// HERE YOU SHOULD ONLY USE COLORS FROM THE COLORS MAP
+$theme: (
+  "primary": map-get($colors, "blackish"),
+  "secondary": map-get($colors, "whiteish"),
+);
+
+// Colors of the elements that lay over a specific theme color
+// There should be one entry for every theme entry
+$theme-over: (
+  "primary": map-get($colors, "whiteish"),
+  "secondary": map-get($colors, "blackish"),
+);
+
+// All the font stacks (eventually only main)
+$fonts: (
+  "main": (
+    "Arial",
+    sans-serif,
+  ),
+);
