@@ -1,44 +1,27 @@
-/* Reset */
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
 
-ul,
-ol {
-  list-style: none;
-}
-
-/* Base */
-body {
-  font-family: "Josefin Sans", sans-serif;
-  background-color: black;
-  color: white;
-}
-
-/* Navbar */
 .navbar {
   font-size: 18px;
   padding: 10px 0;
   flex-wrap: wrap;
   margin-bottom: 40px;
+  @include m.get-color("primary");
 }
 
 .main-nav {
   list-style-type: none;
   display: none;
+
+  li {
+    text-align: center;
+    margin: 15px auto;
+  }
 }
 
 .nav-links,
 .logo {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.main-nav li {
-  text-align: center;
-  margin: 15px auto;
 }
 
 .logo {
@@ -54,11 +37,6 @@ body {
   right: 20px;
   cursor: pointer;
   font-size: 24px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.active {
-  display: block;
 }
 
 .social {
@@ -70,21 +48,25 @@ body {
   justify-content: space-evenly;
   font-size: 25px;
   position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: white;
+    width: 95%;
+    height: 2px;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
-.social::after {
-  content: "";
+.active {
   display: block;
-  position: absolute;
-  background: white;
-  width: 95%;
-  height: 2px;
-  bottom: -3px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
-@media screen and (min-width: 768px) {
+@include m.mq("small") {
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -104,27 +86,22 @@ body {
   }
 
   .nav-links {
+    @include m.get-color("primary");
+    display: inline-block;
     margin-left: 40px;
+
+    &:hover {
+      transition: transform 100ms ease-in;
+      transform: scale(1.1);
+    }
   }
 
   .logo {
     margin-top: 0;
+    @include m.get-color("primary");
   }
 
   .navbar-toggle {
     display: none;
   }
-
-  .logo:hover,
-  .nav-links:hover {
-    color: rgba(255, 255, 255, 1);
-  }
-}
-
-/* Post preview */
-.preview {
-  width: 300px;
-  background: white;
-  color: black;
-  text-transform: capitalize;
 }

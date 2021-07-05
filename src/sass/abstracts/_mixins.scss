@@ -1,0 +1,13 @@
+@use './variables' as v;
+
+@mixin mq($point) {
+  $size: map-get(v.$breakpoints, $point);
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin get-color($theme-elem) {
+  background-color: map-get(v.$theme, $theme-elem);
+  color: map-get(v.$theme-over, $theme-elem);
+}
