@@ -9,7 +9,8 @@ layout: 'base.njk'
     <li {{ 'class=featured' if loop.index == 1 }}>
       {{ postPreview({
         image: post.data.image,
-        postTitle: post.data.title
+        postTitle: post.data.title,
+        url: post.url
       }) }}
     </li>
   {% endfor %}
