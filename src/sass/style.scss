@@ -1,4 +1,7 @@
 @use "./base/reset";
+@use "./base/base";
 @use "./base/helpers";
 @use "./components/navbar";
+@use "./components/post-preview";
 @use "./base/typography";
+@use "./pages/home";

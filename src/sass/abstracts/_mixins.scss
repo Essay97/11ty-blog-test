@@ -1,4 +1,5 @@
 @use './variables' as v;
+@use 'sass:math' as math;
 
 @mixin mq($point) {
   $size: map-get(v.$breakpoints, $point);
@@ -10,4 +11,20 @@
 @mixin get-color($theme-elem) {
   background-color: map-get(v.$theme, $theme-elem);
   color: map-get(v.$theme-over, $theme-elem);
+}
+
+@mixin aspect-ratio($w, $h) {
+  padding-bottom: math.div($h, $w) * 100%;
+}
+
+@mixin gridish-flex($n-cols) {
+  display: flex;
+  flex-wrap: wrap;
+
+  // Selects all the children of flex container -> selects flex items
+  & > * {
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: math.div(100%, $n-cols);
+  }
 }

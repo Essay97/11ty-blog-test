@@ -2,17 +2,15 @@
 title: Home
 layout: 'base.njk'
 ---
-
+{% from "post-preview.njk" import postPreview %}
 <h1>HOME</h1>
-<a href="/about">Section 1</a><a href="/media">Section 2</a>
-<ul>
-  {% for post in collections.post | reverse %}
-    <li>
-      <article>
-        <img height="200" width="200" src="{{post.data.image}}" alt="thumbnail">
-        <h4>{{ post.data.title }}</h4>
-        <a href="{{ post.url }}">Read this</a>
-      </article>
+<ul class="home-main-content" role="list">
+  {% for post in collections.post | reverse | limit(3) %}
+    <li {{ 'class=featured' if loop.index == 1 }}>
+      {{ postPreview({
+        image: post.data.image,
+        postTitle: post.data.title
+      }) }}
     </li>
   {% endfor %}
 </ul>
