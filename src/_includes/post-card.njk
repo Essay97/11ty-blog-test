@@ -1,8 +1,13 @@
+{# @param url
+   @param image
+   @param postTitle
+#}
+
 {% macro postPreview(params) %}
   <a href="{{ params.url }}">
     <article class="preview">
       <div class="preview-image">
-        <img src="{{params.image}}" alt="thumbnail">
+        <img src="{{ params.image }}" alt="thumbnail">
       </div>
       <h4 class="card-text">{{ params.postTitle }}</h4>
     </article>

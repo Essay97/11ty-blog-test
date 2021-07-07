@@ -2,8 +2,9 @@
 title: Home
 layout: 'base.njk'
 ---
-{% from "post-preview.njk" import postPreview %}
-<h1>HOME</h1>
+{% from "post-card.njk" import postPreview %}
+{% from "post-secondary-card.njk" import postSecondaryPreview %}
+<h1 class="page-title">Latest news</h1>
 <ul class="home-main-content" role="list">
   {% for post in collections.post | reverse | limit(3) %}
     <li {{ 'class=featured' if loop.index == 1 }}>
@@ -15,3 +16,23 @@ layout: 'base.njk'
     </li>
   {% endfor %}
 </ul>
+
+<h2 class="page-secondary-title">More articles</h2>
+<section class="home-secondary-section">
+  <ul class="flex-col" role="list">
+    {% for post in collections.post | reverse | shift(3) %}
+      <li>
+        {{ postSecondaryPreview({
+          image: post.data.image,
+          postTitle: post.data.title,
+          url: post.url
+        }) }}
+      </li>
+    {% endfor %}
+  </ul>
+  <aside>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, reiciendis omnis. Ex voluptatem laborum eos recusandae cum, quaerat quis explicabo velit obcaecati, maiores esse similique quia dolore possimus, assumenda cumque.
+    </p>
+  </aside>
+</section>

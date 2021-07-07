@@ -2,7 +2,9 @@
 @use "./base/base";
 @use "./base/helpers";
 @use "./components/navbar";
-@use "./components/post-preview";
+@use "./components/post-card";
+@use "./components/post-secondary-card";
+@use "./components/posts-grid";
 @use "./base/typography";
 @use "./pages/home";
 @use "./pages/post";

@@ -49,6 +49,31 @@
   font-size: 25px;
   position: relative;
 
+  a {
+    color: map-get(v.$theme, "neutral");
+    display: block;
+  }
+
+  li:nth-child(1):hover a {
+    color: #4267b2; //Facebook brand color
+  }
+
+  li:nth-child(2):hover a {
+    color: #c13584; //Instagram brand color
+  }
+
+  li:nth-child(3):hover a {
+    color: #25f4ee; //TikTok brand color
+  }
+
+  li:nth-child(4):hover a {
+    color: #ff0000; //Youtube brand color
+  }
+
+  li:nth-child(5):hover a {
+    color: #1db954; //Spotify brand color
+  }
+
   &::after {
     content: "";
     display: block;
@@ -91,8 +116,9 @@
     margin-left: 40px;
 
     &:hover {
-      transition: transform 100ms ease-in;
+      transition: all 100ms ease-in;
       transform: scale(1.1);
+      color: map-get(v.$theme, "accent");
     }
   }
 

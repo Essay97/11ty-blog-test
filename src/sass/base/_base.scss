@@ -5,11 +5,11 @@
 }
 
 main {
-  margin: 0 30px;
+  margin: 0 30px 80px 30px;
 }
 
 @include m.mq("small") {
   main {
-    margin: 0 80px;
+    margin: 0 80px 80px 80px;
   }
 }

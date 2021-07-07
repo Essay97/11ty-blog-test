@@ -12,7 +12,14 @@
   text-decoration: none !important;
 }
 
-.post-title {
-  font-size: 34px;
+.page-title {
+  font-size: 45px;
   font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: map-get(v.$theme, "accent");
+  text-underline-offset: 7px;
+}
+
+.page-secondary-title {
+  font-size: 32px;
 }
