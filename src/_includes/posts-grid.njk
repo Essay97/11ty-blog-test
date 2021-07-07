@@ -1,0 +1,13 @@
+{% from "post-card.njk" import postPreview %}
+
+{% macro postGrid(params) %}
+  <section class="post-grid">
+    {% for post in params.list | reverse %}
+      {{ postPreview({
+        url: post.url,
+        image: post.data.image,
+        postTitle: post.data.title
+      })}}
+    {% endfor %}
+  </section>
+{% endmacro %}

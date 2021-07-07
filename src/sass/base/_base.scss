@@ -1,0 +1,15 @@
+@use "../abstracts/mixins" as m;
+
+.base-style {
+  @include m.get-color("primary");
+}
+
+main {
+  margin: 0 30px 80px 30px;
+}
+
+@include m.mq("small") {
+  main {
+    margin: 0 80px 80px 80px;
+  }
+}

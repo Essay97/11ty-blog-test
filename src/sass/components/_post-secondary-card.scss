@@ -1,0 +1,31 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.preview-secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: v.$border-radius;
+  overflow: hidden;
+  @include m.get-color("secondary");
+  @include m.aspect-ratio(16, 9);
+
+  .preview-image {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  &:hover h4 {
+    color: map-get(v.$theme, "accent");
+  }
+}
+
+@include m.mq("small") {
+  .preview-secondary {
+    flex-direction: row;
+
+    h4 {
+      margin-left: 80px;
+    }
+  }
+}

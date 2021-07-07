@@ -1,0 +1,17 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.preview {
+  border-radius: v.$border-radius;
+  overflow: hidden;
+  @include m.get-color("secondary-dark");
+  @include m.aspect-ratio(16, 9);
+
+  &:hover h4 {
+    color: map-get(v.$theme, "accent");
+  }
+
+  h4 {
+    padding: 30px;
+  }
+}

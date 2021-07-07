@@ -1,0 +1,10 @@
+{% macro postSecondaryPreview(params) %}
+  <a href="{{ params.url }}">
+    <article class="preview-secondary">    
+      <div class="preview-image">
+        <img src="{{ params.image }}" alt="thumbnail">
+      </div>
+      <h4>{{ params.postTitle }}</h4>
+    </article>
+  </a>
+{% endmacro %}

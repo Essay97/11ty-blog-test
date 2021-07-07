@@ -1,27 +1,41 @@
 // Breakpoints for responsive design
 $breakpoints: (
-  "small": 40em,
-  "medium": 65em,
+  "small": 768px,
+  "medium": 964px,
 );
 
 // Color definitions
 $colors: (
-  "blackish": hsl(40, 2%, 12%),
+  "blackish": hsl(206, 9%, 15%),
   "whiteish": hsl(240, 20%, 95%),
+  "yellow": hsl(56, 97%, 69%),
+  "violet": hsl(303, 43%, 45%),
+  "blue": hsl(239, 82%, 58%),
+  "dark-green": hsl(87, 49%, 36%),
+  "green": hsl(85, 59%, 48%),
+  "dark-grey": hsl(210, 5%, 29%),
+  "grey": hsl(204, 2%, 43%),
 );
 
 // Theme definition
 // HERE YOU SHOULD ONLY USE COLORS FROM THE COLORS MAP
 $theme: (
   "primary": map-get($colors, "blackish"),
-  "secondary": map-get($colors, "whiteish"),
+  "secondary": map-get($colors, "grey"),
+  "secondary-dark": map-get($colors, "dark-grey"),
+  "accent": map-get($colors, "green"),
+  "accent-dark": map-get($colors, "dark-green"),
+  "neutral": map-get($colors, "whiteish"),
 );
 
 // Colors of the elements that lay over a specific theme color
 // There should be one entry for every theme entry
 $theme-over: (
   "primary": map-get($colors, "whiteish"),
-  "secondary": map-get($colors, "blackish"),
+  "secondary": map-get($colors, "whiteish"),
+  "secondary-dark": map-get($colors, "whiteish"),
+  "accent": map-get($colors, "blackish"),
+  "accent-dark": map-get($colors, "whiteish"),
 );
 
 // All the font stacks (eventually only main)
@@ -31,3 +45,5 @@ $fonts: (
     sans-serif,
   ),
 );
+
+$border-radius: 3px;

@@ -3,16 +3,10 @@ title: Section 1
 layout: 'base.njk'
 ---
 
-<h1>ABOUT US</h1>
+{% from "posts-grid.njk" import postGrid %}
 
-<ul>
-  {% for post in collections.section1 | reverse %}
-    <li>
-      <article>
-        <img height="200" width="200" src="{{post.data.image}}" alt="thumbnail">
-        <h4>{{ post.data.title }}</h4>
-        <a href="{{ post.url }}">Read this</a>
-      </article>
-    </li>
-  {% endfor %}
-</ul>
+<h1 class="page-title">About us</h1>
+
+{{ postGrid({
+  list: collections.about
+})}}
