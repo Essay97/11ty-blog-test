@@ -9,9 +9,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("shift", (arr, shift) =>
     arr.slice(shift, arr.length)
   );
-  eleventyConfig.addFilter("debugJSON", (item) => {
-    console.log("JSON is: ", item);
-  });
 
   return {
     dir: {

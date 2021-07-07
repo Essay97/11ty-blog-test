@@ -18,6 +18,7 @@
   text-decoration: underline;
   text-decoration-color: map-get(v.$theme, "accent");
   text-underline-offset: 7px;
+  line-height: 200px;
 }
 
 .page-secondary-title {

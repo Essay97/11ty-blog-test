@@ -5,7 +5,6 @@
   font-size: 18px;
   padding: 10px 0;
   flex-wrap: wrap;
-  margin-bottom: 40px;
   @include m.get-color("primary");
 }
 
@@ -22,6 +21,7 @@
 .nav-links,
 .logo {
   text-decoration: none;
+  @include m.get-color("primary");
 }
 
 .logo {
@@ -111,7 +111,6 @@
   }
 
   .nav-links {
-    @include m.get-color("primary");
     display: inline-block;
     margin-left: 40px;
 
