@@ -4,7 +4,11 @@ layout: "base.njk"
 ---
 
 <h1 class="page-title">Contact us</h1>
-<form name="contact" method="POST" data-netlify="true">
-  <label> Test: <input type="text" name="testVal"></label>
-  <input type="submit" value="YAYYY">
-</form>
+<section class="contact-us">
+<img src="/assets/email.png" alt="email">
+  <form name="contact" method="POST" data-netlify="true">
+    <label for="user-name">Your name</label><input id="user-name" type="text" name="user-name">
+    <label for="message">Your message</label><textarea  name="message"></textarea>
+    <input class="button" type="submit" value="Submit">
+  </form>
+</section>
