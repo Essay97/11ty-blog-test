@@ -29,6 +29,7 @@
   font-size: 22px;
   margin-top: 10px;
   margin-left: 20px;
+  text-transform: uppercase;
 }
 
 .navbar-toggle {
@@ -74,21 +75,28 @@
     color: #1db954; //Spotify brand color
   }
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    background: white;
-    width: 95%;
-    height: 2px;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+  // &::after {
+  //   content: "";
+  //   display: block;
+  //   position: absolute;
+  //   background: white;
+  //   width: 95%;
+  //   height: 2px;
+  //   bottom: -3px;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  // }
 }
 
 .active {
   display: block;
+}
+
+.divider {
+  background: white;
+  width: 95%;
+  height: 2px;
+  margin: auto;
 }
 
 @include m.mq("small") {
@@ -128,5 +136,10 @@
 
   .navbar-toggle {
     display: none;
+  }
+
+  .social {
+    max-width: 49%;
+    margin: auto;
   }
 }
