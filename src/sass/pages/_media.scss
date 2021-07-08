@@ -4,6 +4,7 @@
 .swiper-container {
   height: 400px;
   width: 90%;
+  max-width: 900px;
   margin-bottom: 80px;
 
   .swiper-slide {
@@ -40,10 +41,5 @@
 @include m.mq("small") {
   .swiper-container {
     width: 70%;
-  }
-
-  .swiper-button-next::after,
-  .swiper-button-prev::after {
-    color: map-get(v.$theme, "accent");
   }
 }
