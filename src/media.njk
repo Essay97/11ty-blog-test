@@ -1,13 +1,31 @@
 ---
-title: Section 1
+title: Media
 layout: 'base.njk'
 ---
 
 {% from "posts-grid.njk" import postGrid %}
 <h1 class="page-title">Media</h1>
 
+<!-- Slider main container -->
+<div class="swiper-container media-carousel">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><img src="/assets/concert-square.jpg" alt="slideshow image"></div>
+    <div class="swiper-slide"><img src="/assets/concert-horizontal.jpg" alt="slideshow image"></div>
+    <div class="swiper-slide"><img src="/assets/concert-vertical.jpg" alt="slideshow image"></div>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
 
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
 
 {{ postGrid({
   list: collections.media
 })}}
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="/js/carousel.js"></script>

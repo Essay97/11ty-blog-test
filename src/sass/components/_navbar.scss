@@ -4,7 +4,8 @@
 .navbar {
   font-size: 18px;
   padding: 10px 0;
-  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
   @include m.get-color("primary");
 }
 
@@ -29,6 +30,7 @@
   font-size: 22px;
   margin-top: 10px;
   margin-left: 20px;
+  text-transform: uppercase;
 }
 
 .navbar-toggle {
@@ -73,22 +75,17 @@
   li:nth-child(5):hover a {
     color: #1db954; //Spotify brand color
   }
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    background: white;
-    width: 95%;
-    height: 2px;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
 .active {
   display: block;
+}
+
+.divider {
+  background: white;
+  width: 95%;
+  height: 2px;
+  margin: auto;
 }
 
 @include m.mq("small") {
@@ -97,6 +94,14 @@
     justify-content: space-between;
     padding-bottom: 0;
     align-items: center;
+  }
+
+  .upper-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .main-nav {
@@ -128,5 +133,9 @@
 
   .navbar-toggle {
     display: none;
+  }
+
+  .social {
+    gap: 40px;
   }
 }

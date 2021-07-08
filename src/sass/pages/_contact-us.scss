@@ -1,0 +1,42 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.contact-us {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(2, 1fr);
+
+  img {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    padding: 25%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    border-radius: v.$border-radius;
+    @include m.get-color("secondary-dark");
+
+    input:not([type="submit"]),
+    textarea {
+      margin-bottom: 18px;
+
+      &:focus {
+        outline-color: map-get(v.$theme, "accent-dark");
+        @include m.get-color("accent");
+      }
+    }
+
+    textarea {
+      resize: none;
+      flex-grow: 1;
+    }
+
+    input[type="submit"] {
+      align-self: center;
+    }
+  }
+}
